@@ -1,5 +1,19 @@
-users: {}
-articles: {}
-nextArticleId: 1
+users:
+  jleung1994@gmail.con:
+    username: jleung1994@gmail.con
+    articleIds:
+      - 1
+    commentIds: []
+articles:
+  '1':
+    id: 1
+    title: Build Web APIs From Scratch
+    url: 'https://www.codecademy.com/pro/intensive/build-web-apis-from-scratch'
+    username: jleung1994@gmail.con
+    commentIds: []
+    upvotedBy:
+      - jleung1994@gmail.con
+    downvotedBy: []
+nextArticleId: 2
 comments: {}
 nextCommentId: 1

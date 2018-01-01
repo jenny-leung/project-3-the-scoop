@@ -365,20 +365,24 @@ function downvote(item, username) {
 
 const loadYamlFile = require('load-yaml-file');
 function loadDatabase() {
-  let loadData;
   loadYamlFile('database.yml').then(data => {
-    //database = data;
-    //console.log(data);
     console.log('loaded');
-    loadData = data;
+    if (data.nextArticleId > 1) {
+      database = data;
+      return true;
+    }
   });
-  return loadData;
+  return false;
 }
 const writeYamlFile = require('write-yaml-file');
 function saveDatabase() {
-  writeYamlFile('database.yml', database).then(() => {
-    console.log('done');
-  });
+  if (database.nextArticleId > 1) {
+    writeYamlFile('database.yml', database).then(() => {
+      console.log('done');
+      return true;
+    });
+  }
+  return false;
 }
 
 // Write all code above this line.
